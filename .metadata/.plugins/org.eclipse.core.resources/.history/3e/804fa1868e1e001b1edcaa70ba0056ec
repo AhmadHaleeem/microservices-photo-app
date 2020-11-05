@@ -1,0 +1,8 @@
+spring.application.name=zuul
+server.port=8011
+eureka.client.service-url.defaultZone=http://localhost:8010/eureka
+ribbon.ReadTimeout=60000
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=30000
+
+api.registration.url.path = /users-ws/users
+api.login.url.path = /users-ws/users/login

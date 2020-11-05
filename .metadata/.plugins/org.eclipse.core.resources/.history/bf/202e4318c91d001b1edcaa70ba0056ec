@@ -1,0 +1,11 @@
+package com.appdeveloperblog.photoapp.api.users.service;
+
+public class UsersServiceImpl implements UsersService {
+
+	@Override
+	public UsersServiceImpl createUser(UsersServiceImpl userDetails) {
+		
+		return null;
+	}
+
+}

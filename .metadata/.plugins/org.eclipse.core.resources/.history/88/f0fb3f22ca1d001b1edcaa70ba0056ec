@@ -1,0 +1,14 @@
+package com.appdeveloperblog.photoapp.api.users.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UsersServiceImpl implements UsersService {
+
+	@Override
+	public UsersServiceImpl createUser(UsersServiceImpl userDetails) {
+
+		return null;
+	}
+
+}

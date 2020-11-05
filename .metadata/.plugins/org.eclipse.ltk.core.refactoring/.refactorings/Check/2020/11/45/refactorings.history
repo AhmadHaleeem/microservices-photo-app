@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.haleem.Test.java&apos; to &apos;UnlimitedCryptoPoliciesCheck.java&apos;&#x0D;&#x0A;- Original project: &apos;Check&apos;&#x0D;&#x0A;- Original element: &apos;com.haleem.Test.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.haleem.UnlimitedCryptoPoliciesCheck.java&apos;" description="Rename compilation unit &apos;Test.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.haleem{Test.java" name="UnlimitedCryptoPoliciesCheck.java" references="false" stamp="1604515772826" version="1.0"/>
+</session>

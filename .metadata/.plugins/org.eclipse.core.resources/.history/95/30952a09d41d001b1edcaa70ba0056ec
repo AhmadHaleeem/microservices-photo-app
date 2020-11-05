@@ -1,0 +1,18 @@
+package com.appdeveloperblog.photoapp.api.users.service;
+
+import java.util.UUID;
+
+import org.springframework.stereotype.Service;
+
+import com.appdeveloperblog.photoapp.api.users.sahred.UserDto;
+
+@Service
+public class UsersServiceImpl implements UsersService {
+
+	@Override
+	public UsersServiceImpl createUser(UserDto userDetails) {
+		userDetails.setUserId(UUID.randomUUID().toString());
+		return null;
+	}
+
+}

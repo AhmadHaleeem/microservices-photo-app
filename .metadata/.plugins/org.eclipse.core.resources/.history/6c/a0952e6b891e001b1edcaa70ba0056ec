@@ -1,0 +1,11 @@
+package com.appdeveloperblog.photoapp.api.users.service;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+import com.appdeveloperblog.photoapp.api.users.sahred.UserDto;
+
+public interface UsersService extends UserDetailsService {
+
+	public UserDto createUser(UserDto userDetails);
+
+}

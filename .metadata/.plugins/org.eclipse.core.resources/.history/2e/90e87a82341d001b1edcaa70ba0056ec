@@ -1,0 +1,14 @@
+package com.appsdeveloperblog.app.ws.userservice;
+
+import java.util.Map;
+
+import com.appsdeveloperblog.app.ws.ui.model.request.UserDetailsRequestModel;
+import com.appsdeveloperblog.app.ws.ui.model.response.UserRest;
+
+public interface UserService {
+
+	 Map<String, UserRest> users( Map<String, UserRest> users);
+	
+	UserRest createUser(UserDetailsRequestModel userDetails, Map<String, UserRest> users);
+	
+}

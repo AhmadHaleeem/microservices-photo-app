@@ -1,0 +1,5 @@
+package com.appdeveloperblog.photoapp.api.gateway.security;
+
+public class AuthorizationFilter {
+
+}

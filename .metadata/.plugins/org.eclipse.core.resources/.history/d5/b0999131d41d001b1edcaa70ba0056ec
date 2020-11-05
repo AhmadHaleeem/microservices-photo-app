@@ -1,0 +1,9 @@
+package com.appdeveloperblog.photoapp.api.users.service;
+
+import com.appdeveloperblog.photoapp.api.users.sahred.UserDto;
+
+public interface UsersService {
+
+	UsersServiceImpl createUser(UserDto userDetails);
+
+}
