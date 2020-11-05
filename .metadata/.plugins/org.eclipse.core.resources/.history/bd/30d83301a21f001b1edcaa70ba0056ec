@@ -1,0 +1,5 @@
+package com.appdeveloperblog.photoapp.api.users.sahred;
+
+public class FeignErrorDecoder {
+
+}
