@@ -106,7 +106,10 @@ public class UsersServiceImpl implements UsersService {
 			logger.error(e.getLocalizedMessage());
 		}
 		*/
+		
+		logger.info("Before calling albums Microservice");
 		List<AlbumResponseModel> albumsList = albumsServiceClient.getAlbums(UserId);
+		logger.info("After calling albums Microservice");
 		
 		userDto.setAlbums(albumsList);
 
