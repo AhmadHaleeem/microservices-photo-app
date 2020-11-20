@@ -1,0 +1,5 @@
+#spring.cloud.config.uri = http://desktop-4trdetr.home:8012
+#spring.cloud.config.name = PhotoAppApiConfigServer
+
+# it refers to the name of the file
+#spring.cloud.config.name = users-ws

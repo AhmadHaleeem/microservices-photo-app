@@ -1,16 +1,11 @@
 package com.appdeveloperblog.photoapp.api.users.ui.controllers;
 
-import java.util.List;
-
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.env.Environment;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,12 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
-import com.appdeveloperblog.photoapp.api.users.UsersRepository;
 import com.appdeveloperblog.photoapp.api.users.sahred.UserDto;
 import com.appdeveloperblog.photoapp.api.users.service.UsersService;
-import com.appdeveloperblog.photoapp.api.users.ui.model.AlbumResponseModel;
 import com.appdeveloperblog.photoapp.api.users.ui.model.CreateUserRequestModel;
 import com.appdeveloperblog.photoapp.api.users.ui.model.CreateUserResponseModel;
 import com.appdeveloperblog.photoapp.api.users.ui.model.UserResponseModel;
@@ -58,7 +50,7 @@ public class UsersController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(returnValue);
 	}
 	
-	  @GetMapping(value="/{userId}", produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	@GetMapping(value="/{userId}", produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
 	    public ResponseEntity<UserResponseModel> getUser(@PathVariable("userId") String userId) {
 		
 		UserDto userDto = usersService.getUserByUserId(userId);

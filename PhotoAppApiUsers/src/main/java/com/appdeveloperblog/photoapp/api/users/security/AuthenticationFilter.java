@@ -1,3 +1,4 @@
+
 package com.appdeveloperblog.photoapp.api.users.security;
 
 import java.io.IOException;
@@ -31,7 +32,8 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 	private Environment environment;
 	private UsersService usersService;
 
-	public AuthenticationFilter(Environment environment, UsersService usersService, AuthenticationManager authenticationManager) {
+	public AuthenticationFilter(Environment environment, UsersService usersService,
+			AuthenticationManager authenticationManager) {
 		this.environment = environment;
 		this.usersService = usersService;
 		super.setAuthenticationManager(authenticationManager);
@@ -53,25 +55,23 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 	}
 
 	@Override
-	protected void successfulAuthentication(HttpServletRequest request,
-											HttpServletResponse response,
+	protected void successfulAuthentication(HttpServletRequest request, 
+											HttpServletResponse response, 
 											FilterChain chain,
 											Authentication authResult) throws IOException, ServletException {
+		
 		String userName = ((User) authResult.getPrincipal()).getUsername();
 		UserDto userDetails = usersService.getUserDetailsByEmail(userName);
-		
+
 		System.out.println(environment.getProperty("token.expiration_time"));
-		
-		String token = Jwts.builder()
-					.setSubject(userDetails.getUserId())
-					.setExpiration(new Date(System.currentTimeMillis() + Long.parseLong(environment.getProperty("token.expiration_time"))))
-					.signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret"))
-					.compact();
-		
+
+		String token = Jwts.builder().setSubject(userDetails.getUserId())
+				.setExpiration(new Date(
+						System.currentTimeMillis() + Long.parseLong(environment.getProperty("token.expiration_time"))))
+				.signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret")).compact();
+
 		response.addHeader("token", token);
 		response.addHeader("userId", userDetails.getUserId());
 	}
-	
-	
 
 }

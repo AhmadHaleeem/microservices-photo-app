@@ -1,3 +1,4 @@
+
 package com.appdeveloperblog.photoapp.api.users.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Autowired
-	public WebSecurity(Environment environment, UsersService usersService, BCryptPasswordEncoder bCryptPasswordEncoder) {
+	public WebSecurity(Environment environment, UsersService usersService,
+			BCryptPasswordEncoder bCryptPasswordEncoder) {
 		this.environment = environment;
 		this.usersService = usersService;
 		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
@@ -29,13 +31,17 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/**").permitAll().and().addFilter(getAuthenticationFilter());
 		http.headers().frameOptions().disable();
+			http.authorizeRequests().antMatchers("/**").permitAll()
+		.and()
+			.addFilter(getAuthenticationFilter());
 	}
 
 	private AuthenticationFilter getAuthenticationFilter() throws Exception {
-		AuthenticationFilter authenticationFilter = new AuthenticationFilter(environment, usersService, authenticationManager());
-		//authenticationFilter.setAuthenticationManager(authenticationManager());
+		AuthenticationFilter authenticationFilter = new AuthenticationFilter(environment, usersService,
+				authenticationManager());
+		// authenticationFilter.setAuthenticationManager(authenticationManager());
+		// to configure a custom login URL
 		authenticationFilter.setFilterProcessesUrl(environment.getProperty("login.url.path"));
 		return authenticationFilter;
 	}

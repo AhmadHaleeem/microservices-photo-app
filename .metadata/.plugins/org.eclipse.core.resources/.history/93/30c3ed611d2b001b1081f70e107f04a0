@@ -1,0 +1,3 @@
+spring.cloud.config.uri = http://desktop-4trdetr.home:8012
+#spring.cloud.config.name = PhotoAppApiConfigServer
+spring.cloud.config.name = PhotoAppApiConfigServer

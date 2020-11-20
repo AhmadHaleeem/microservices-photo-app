@@ -34,14 +34,15 @@ public class PhotoAppApiUsersApplication {
 	}
 
 	@Bean
-	Logger.Level feinLoggerLover() {
+	Logger.Level feignLoggerLover() {
 		return Logger.Level.FULL;
 	}
 
-	/*
-	 * Because I annotated [FeignErrorDecoder] as component so no need to make this peace of code alive
-	 * @Bean public FeignErrorDecoder getFeignErrorDecoder() { return new
-	 * FeignErrorDecoder(); }
-	 */
+	// Because I annotated [FeignErrorDecoder] as component so no need to make this
+	// peace of code alive
+	//@Bean
+	//public FeignErrorDecoder getFeignErrorDecoder() {
+		//return new FeignErrorDecoder(environment)
+	//}
 
 }

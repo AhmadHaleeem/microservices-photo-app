@@ -1,0 +1,24 @@
+spring.application.name=zuul
+server.port=8011
+# to add username [test] and password [test] just right like below
+eureka.client.service-url.defaultZone=http://test:test@localhost:8010/eureka
+ribbon.ReadTimeout=60000
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=300000
+
+api.h2console.url.path = /users-ws/h2-console/**
+api.registration.url.path = /users-ws/users
+api.login.url.path = /users-ws/users/login
+api.users.actuator.url.path = /users-ws/actuator/*
+
+authorization.token.header.name = Authorization
+authorization.token.header.prefix = Bearer
+token.secret = sdfsd45435adas21asdasd213lk21de
+
+management.endpoints.web.exposure.include=bus-refresh
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+
+management.endpoints.web.exposure.include = beans,health,routes,httptrace
+api.zuul.actuator.url.path = /actuator/*
